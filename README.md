@@ -6,10 +6,10 @@
 2. Shereen Punnassery
 
 # Contributions
-1. Krishna Gupta- <br>
+1. Krishna Gupta: <br>
     
    
-2. Shereen Punnassery - <br>
+2. Shereen Punnassery: <br>
     
 
 All the work done above was reviewed by each other in order to proceed further.
