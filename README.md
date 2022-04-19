@@ -4,7 +4,7 @@ Discover VMX features present in your processor by writing a Linux kernel module
 Create a Linux kernel module that will query various MSRs to determine virtualization features available in your CPU. This module will report (via the system message log) the features it discovers.
 
 # Team members
-1. Krishna Gupta
+1. Krishna Gupta - 015721199
 2. Shereen Punnassery
 
 # Contributions
