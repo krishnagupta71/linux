@@ -9,8 +9,8 @@ Create a Linux kernel module that will query various MSRs to determine virtualiz
 
 # Contributions
 1. Krishna Gupta: <br>
-* Setup the environment in Windows OS using VMWare Workstation and then installed Linux Ubuntu.
-* Built a VM successfully in the first attempt by allocating 150GB storage and 8GB RAM to it. 
+* Setup the environment in Windows 11 using VMWare Workstation (30 day trail) and then installed Linux Ubuntu in the VM.
+* Built a VM successfully and allocated 50GB storage and 8GB RAM to it. Also turned on nested virtualization for the VM. 
 * Downloaded and built the Linux Kernel modules and associated libraries to create a local copy of Linux Kernel.
 * Discussed and researched about MSRs to be read in the SDM.
 * Modified the cmpe283-1.c code by adding the custom logic to enable our system to read and give output for capabilities of the various MSRs. 
