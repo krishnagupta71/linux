@@ -26,7 +26,7 @@ Create a Linux kernel module that will query various MSRs to determine virtualiz
 * Researched and discussed MSRs to be read in the SDM and contributed to the writing and execution of the code.
 * Contribution also includes MSR code for controls- Entry and Exit controls and determining the availability of secondary procbased controls.
 * Tested and verified the proper working of the functionality of code by comparing it with the sample output given to us. 
-* Simulating the answers for the questions in the README.md file.
+* Updates in the README.md file.
 
 All the work done above was reviewed by each other in order to proceed further.
 
