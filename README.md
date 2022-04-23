@@ -237,9 +237,10 @@ sudo apt-get install cpuid
 7. Create test program code in inner VM.
 
 8. Once the Guest VM is up, Run the below commands in the inner VM (which is inside a VM):<br />  
+```
   cpuid -l 0X4fffffff -s exit_number<br />
   cpuid -l 0X4ffffffe -s exit_number
-    
+``` 
 
   
 
