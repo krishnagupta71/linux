@@ -1443,7 +1443,7 @@ int kvm_emulate_cpuid(struct kvm_vcpu *vcpu)
 {
 	u32 eax, ebx, ecx, edx;
 	extern u32 total_exits;
-	extern u64_t total_time_in_exits
+	extern u64_t total_time_in_exits;
 	if (cpuid_fault_enabled(vcpu) && !kvm_require_cpl(vcpu, 0))
 		return 1;
 
