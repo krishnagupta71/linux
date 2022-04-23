@@ -1442,13 +1442,28 @@ EXPORT_SYMBOL_GPL(kvm_cpuid);
 int kvm_emulate_cpuid(struct kvm_vcpu *vcpu)
 {
 	u32 eax, ebx, ecx, edx;
-
+	extern u32 total_exits;
+	extern u64_t total_time_in_exits
 	if (cpuid_fault_enabled(vcpu) && !kvm_require_cpl(vcpu, 0))
 		return 1;
 
 	eax = kvm_rax_read(vcpu);
 	ecx = kvm_rcx_read(vcpu);
-	kvm_cpuid(vcpu, &eax, &ebx, &ecx, &edx, false);
+	switch(eax){
+		//For CPUID leaf function %eax=0x4FFFFFFF:
+		case 0x4fffffff:
+			eax = total_exits;
+			// printk("Total exits %u",eax);
+			break;
+		case 0x4ffffffe:
+			// printk("Total time in exits %u", total_time_in_exits);
+			ebx = (u32)(total_time_in_exits >> 32);
+			ecx = (u32)total_time_in_exits;
+			break;
+		default:
+			kvm_cpuid(vcpu, &eax, &ebx, &ecx, &edx, false);
+			break;
+	}
 	kvm_rax_write(vcpu, eax);
 	kvm_rbx_write(vcpu, ebx);
 	kvm_rcx_write(vcpu, ecx);
