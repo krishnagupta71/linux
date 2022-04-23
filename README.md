@@ -255,8 +255,6 @@ sudo reboot
 uname -a
 ```
 After building kernel:<br />
-devki@ubuntu:~$ uname -a<br />
-Linux ubuntu 5.12.0-rc7+ #1 SMP Sun Nov 21 13:34:02 PDT 2021 x86_64 x86_64 x86_64 GNU/Linux
 
 ### Implement the Assignment Functionalities:
 
