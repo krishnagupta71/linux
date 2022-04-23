@@ -1,34 +1,8 @@
-# CMPE283 : Virtualization
-# Assignment 1 - Discovering VMX Features
-Discover VMX features present in your processor by writing a Linux kernel module that queries these features. 
-Create a Linux kernel module that will query various MSRs to determine virtualization features available in your CPU. This module will report (via the system message log) the features it discovers.
+# CMPE283 : Virtualization Technologies Assignments
 
 # Team members
 1. Krishna Gupta - 015721199
 2. Shereen Punnassery - 015312128
-
-# Contributions
-1. Krishna Gupta: <br>
-* Setup the environment in Windows 11 using VMWare Workstation (30 day trail) and then installed Linux Ubuntu in the VM.
-* Built a VM successfully and allocated 50GB storage and 8GB RAM to it. Also turned on nested virtualization for the VM. 
-* Downloaded and built the Linux Kernel modules and associated libraries to create a local copy of Linux Kernel.
-* Discussed and researched about MSRs to be read in the SDM.
-* Modified the cmpe283-1.c code by adding the custom logic to enable our system to read and give output for capabilities of the various MSRs. 
-* Contribution also includes MSR code for controls- Primary and Secondary Procbased controls and discovering the VMX Features present in my processor (Intel) by writing a Linux kernel module that queries these features.
-* Staged and committed the cmpe283-1.c code file and Makefile after inserting the module and printing out the buffer from the Kernel. 
-* Generated a comprehensive diff file after committing the changes to the repository  
-
-    
-   
-2. Shereen Punnassery: <br>
-* Setup the environment in Windows OS using VMWare Workstation and downloaded the Linux ISO file. 
-* Tested the machine to check its capability for VMX virtualization and feature recognition. 
-* Researched and discussed MSRs to be read in the SDM and contributed to the writing and execution of the code.
-* Contribution also includes MSR code for controls- Entry and Exit controls and determining the availability of secondary procbased controls.
-* Tested and verified the proper working of the functionality of code by comparing it with the sample output given to us. 
-* Updates in the README.md file.
-
-All the work done above was reviewed by each other in order to proceed further.
 
 # Machine Details
 
@@ -72,12 +46,15 @@ Refrence: https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel
 17. Verify the current version of kernel using the command "uname -r" (Notice it is upgraded to 5.18.0-rc1+)
 
 
-# Exploring the VMX Features 
+# Assignment 1 - Discover VMX features 
+Discover VMX features present in your processor by writing a Linux kernel module that queries these features. Create a Linux kernel module that will query various MSRs to determine virtualization features available in your CPU. This module will report (via the system message log) the features it discovers.
 
-1. CD into the assignment files directory by using command <br> ```cd assignemnt/```
-2. Compile the C file by using command <br> ```make```. This will create a *.ko file which can be confirmed by ```ls``` command.
-3. Install the module into the kernel using the command ```sudo insmod cmpe283-1.ko```
-4. See the output of the VMX features by printing the system log using ```dmesg```. Or save output in text file using ```dmesg > output.text```
+# Steps to complete Assignment 1:
+1. Setup VM with Linux kernel build as in steps above
+2. CD into the assignment files directory by using command <br> ```cd assignemnt/```
+3. Compile the C file by using command <br> ```make```. This will create a *.ko file which can be confirmed by ```ls``` command.
+4. Install the module into the kernel using the command ```sudo insmod cmpe283-1.ko```
+5. See the output of the VMX features by printing the system log using ```dmesg```. Or save output in text file using ```dmesg > output.text```
 
 # Output
 ```[22767.343417] cmpe283_1: loading out-of-tree module taints kernel.
@@ -206,55 +183,9 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 
 ## Q2. Describe in detail the steps you used to complete the assignment. 
 
-**Prerequisite:** A working assignment 1 configuration.
+**Prerequisite:** Follow the steps to configure VM and build linux kernel and boot it.
 
-#### Steps followed to complete the assignment:
-
-Part 1: How we built the kernel
-
-1. We followed the steps to install the VM, then Ubuntu on our WIndows Machine. Installed ISO - Ubuntu, allocated disk space of 150GB.
-
-2. We have cloned the Linux github repository, using following command: 
-```
-git clone https://github.com/torvalds/linux.git
-```
-3. We followed the insructions given in the Assignment pdf to build kernel.
-
-4. Check the Linux Version (old):<br />
-```
-uname -a
-```
-5. Build the kernel by running the below command:
-```
-sudo apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev
-```
-6. Check the kernel version and copy the appropriate config file into the cloned linux folder: 
-```
-uname -r 
-```
-```
-cd linux
-```
-```
-cp /boot/config-`uname -r` .config
-```
-7. Make the oldconfig file to set the required configuration for building the kernel and just hit enter for every question:
-``` 
-make oldconfig
-```
-8. Run the following instruction in "Linux" folder:
-```
-make -j 2 modules && make -j 2 && sudo make modules_install  && sudo make install
-```
-9. Then reboot the Ubuntu machine: 
-```
-sudo reboot
-```
-10. Verify that the newer kernel is being used after reboot.
-```
-uname -a
-```
-After building kernel:<br />
+<br />
 
 ### Implement the Assignment Functionalities:
 
@@ -265,9 +196,9 @@ and vmx_handle_exit in the following file: linux/arch/x86/kvm/vmx/vmx.c
 
 ### Build the updated code: 
 
-1. After changing the code in KVM as per the assignment requirement, you can rebuild using the same “make” sequence commands or simply use the below command.
+1. After changing the code in KVM use the below command.
 ```
-sudo make -j 2 modules M=arch/x86/kvm 
+sudo make -j 2 modules 
 ```
 2. Load and unload the kvm kernel module (kvm.ko) and kvm-intel module (kvm-intel.ko) using the following commands:
 ```
@@ -305,28 +236,10 @@ sudo apt-get install cpuid
 ```
 7. Create test program code in inner VM.
 
-8. Once the Guest VM is up, issue the following shell script test_assignment2 few times:
-
-   ./test_assignment2
-
-After code changes:<br />
-
-
-
-Virt Manager:<br />
-
-
-* Run the below commands in the inner VM (which is inside a VM):<br />  
+8. Once the Guest VM is up, Run the below commands in the inner VM (which is inside a VM):<br />  
   cpuid -l 0X4fffffff -s exit_number<br />
   cpuid -l 0X4ffffffe -s exit_number
-  
-  inner_vm:<br />
-  
+    
 
-
-* Run the following command in the outer VM to get the output:<br />
-  dmesg
-  
-  outer_vm:<br />
   
 
