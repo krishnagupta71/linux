@@ -5,7 +5,7 @@ Create a Linux kernel module that will query various MSRs to determine virtualiz
 
 # Team members
 1. Krishna Gupta - 015721199
-2. Shereen Punnassery
+2. Shereen Punnassery - 015312128
 
 # Contributions
 1. Krishna Gupta: <br>
@@ -181,25 +181,25 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
       %ebx and %ecx return values are measured in processor cycles, across all VCPUs
 
 ## Team Members: 
-* Kiran Bala Devineni (SJSU ID: 015218866)
-* Venkat Mannam (SJSU ID: 015263326)
+1. Krishna Gupta - 015721199
+2. Shereen Punnassery - 015312128
 
 ## Q1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented/researched.
 
-### Kiran Bala Devineni (SJSU ID: 015218866)
+### Krishna Gupta
 
-* Setup the environment in macOS using VMware Fusion 12 and then installed Linux Ubuntu.
+* Setup the environment in Windows 11 using VMWare Workstation (30 day trail) and then installed Linux Ubuntu in the VM.
+* Built a VM successfully and allocated 50GB storage and 8GB RAM to it. Also turned on nested virtualization for the VM. 
 * Downloaded and built the Linux Kernel modules and associated libraries to create a local copy of Linux Kernel.
 * Researched and discussed the exits and interrupts by referring to the Intel SDM.
 * Contribution also includes writing code for returning the total number of exits and the total time spent processing all exits. 
 * Modified the function kvm_emulate_cpuid in the following file: linux/arch/x86/kvm -> cpuid.c and vmx_handle_exit in the following file: linux/arch/x86/kvm/vmx -> vmx.c 
 * Simulating the answers for the questions in the README.md file.
 
-### Venkat Mannam (SJSU ID: 015263326)
+### Shereen Punnassery
 
-* Setup the environment in macOS using VMware Fusion 12 and downloaded the Linux ISO file. 
-* Built a VM successfully in the first attempt by allocating 150GB storage and 8GB RAM to it.
-* Built another VM inside using the Ubuntu ISO file.
+* Setup the environment in Windows OS using VMWare Workstation and downloaded the Linux ISO file. 
+* Tested the machine to check its capability for VMX virtualization and feature recognition. 
 * Tested the machine to check its capability for VMX virtualization. 
 * Researched and discussed MSRs to be read in the SDM and contributed to the testing of the code.
 * Contribution also includes writing code for the test program that exercises the functionality in the hypervisor's modification.
@@ -212,7 +212,7 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 
 Part 1: How we built the kernel
 
-1. We followed the steps to install the VM, then Ubuntu on our Intel-based MacBook pro. Installed ISO - Ubuntu, allocated disk space of 150GB.
+1. We followed the steps to install the VM, then Ubuntu on our WIndows Machine. Installed ISO - Ubuntu, allocated disk space of 150GB.
 
 2. We have cloned the Linux github repository, using following command: 
 ```
