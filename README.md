@@ -348,7 +348,7 @@ NOTE – there is no coding required for this assignment. We are just running as
 
 ## Team Members: 
 * Krishna Gupta - 015721199
-* SHereen Punnassery - 015312128
+* Shereen Punnassery - 015312128
 
 ## Q1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented/researched.
 
