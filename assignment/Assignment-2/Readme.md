@@ -26,9 +26,8 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 
 ### Shereen Punnassery
 
-* Setup the environment in Windows OS using VMWare Workstation and downloaded the Linux ISO file. 
-* Tested the machine to check its capability for VMX virtualization and feature recognition. 
-* Tested the machine to check its capability for VMX virtualization. 
+* Collaborate with team member to setup the environment in Windows OS using VMWare Workstation. 
+* Tested the machine to check its capability for VMX virtualization and feature recognition.  
 * Researched and discussed MSRs to be read in the SDM and contributed to the testing of the code.
 * Contribution also includes collaborating with teammate to update cpuid.c and vmx.c files.
 * Updating the answers for the questions in the README.md file
