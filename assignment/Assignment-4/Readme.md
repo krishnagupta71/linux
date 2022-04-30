@@ -55,7 +55,7 @@ After reboot:
 ![image](https://user-images.githubusercontent.com/78829969/145341940-afb68b66-58dc-48c8-a8e9-751a43c79993.png)
 
 ## Q3. What did you learn from the count of exits? Was the count what you expected? If not, why not?
-In shadow paging, the number of exits increases when compared to nested paging. The count is expected because during nested paging VM exit occurs when an EPT violation occurs. But in the case of shadow paging, it could exit every time the VM attempts to execute CR0, CR3, CR4 or any exits which are related to paging such as a page fault. So, shadow paging increases the the number of exits compared to nested paging. 
+In shadow paging, the number of exits increases when compared to nested paging. The count increase is expected in shadow paging because, during nested paging VM exit occurs when an EPT violation occurs. But in the case of shadow paging, it could exit every time the VM attempts any CR3 changes, when a page fault happens and during explicit TLB invalidations. So, shadow paging increases the the number of exits compared to nested paging. 
 
 ## Q4. What changed between the two runs (ept vs no-ept)?
 - **EPT Mode:** Because of nested paging, the exit count is less.
