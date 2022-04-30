@@ -21,7 +21,7 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 * Built a VM successfully and allocated 50GB storage and 8GB RAM to it. Also turned on nested virtualization for the VM. 
 * Downloaded and built the Linux Kernel modules and associated libraries to create a local copy of Linux Kernel.
 * Researched and discussed the exits and interrupts by referring to the Intel SDM.
-* Contribution also includes writing code for returning the total number of exits and the total time spent processing all exits. 
+* Collaborating with team member to write code for returning the total number of exits and the total time spent processing all exits. 
 * Modified the function kvm_emulate_cpuid in the following file: linux/arch/x86/kvm -> cpuid.c and vmx_handle_exit in the following file: linux/arch/x86/kvm/vmx -> vmx.c 
 
 
@@ -29,9 +29,8 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 
 * Collaborate with team member to setup the environment in Windows OS using VMWare Workstation.
 * Tested the machine to check its capability for VMX virtualization and feature recognition. 
-* Tested the machine to check its capability for VMX virtualization. 
-* Researched and discussed MSRs to be read in the SDM and contributed to the testing of the code.
-* Contribution also includes writing code for the test program that exercises the functionality in the hypervisor's modification.
+* Researched and discussed the exits and interrupts by referring to the Intel SDM.
+* Collaborating with team member to write code for returning the total number of exits and the total time spent processing all exits.
 * Updating the answers for the questions in the README.md file.
 
 ## Q2. Describe in detail the steps you used to complete the assignment. 
