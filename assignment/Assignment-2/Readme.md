@@ -92,3 +92,6 @@ sudo apt-get install cpuid
   cpuid -l 0X4fffffff -s exit_number
   cpuid -l 0X4ffffffe -s exit_number
 ```
+![image](https://user-images.githubusercontent.com/20012695/166087760-3ca5888e-9967-43db-a20c-dec9063416d9.png)
+
+9. If we want we can also see ```dmesg``` in the outer vm
