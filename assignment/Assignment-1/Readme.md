@@ -1,6 +1,30 @@
 # Assignment 1 - Discover VMX features 
 Discover VMX features present in your processor by writing a Linux kernel module that queries these features. Create a Linux kernel module that will query various MSRs to determine virtualization features available in your CPU. This module will report (via the system message log) the features it discovers.
 
+## Q1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented/researched.
+
+### Krishna Gupta (SJSU ID: 015721199)
+
+* Setup the environment in Windows 11 using VMWare Workstation (30 day trail) and then installed Linux Ubuntu in the VM.
+* Built a VM successfully and allocated 50GB storage and 8GB RAM to it. Also turned on nested virtualization for the VM.
+* Downloaded and built the Linux Kernel modules and associated libraries to create a local copy of Linux Kernel.
+* Discussed and researched about MSRs to be read in the SDM.
+* Modified the cmpe283-1.c code by adding the custom logic to enable our system to read and give output for capabilities of the various MSRs. 
+* Contribution also includes MSR code for controls- Primary and Secondary Procbased controls and discovering the VMX Features present in my processor (Intel) by writing a Linux kernel module that queries these features.
+* Tested and verified the proper working of the functionality of code by comparing it with the sample output given to us. 
+* 
+
+### SHereen Punnassery (SJSU ID: 015312128)
+
+* Setup the environment in Windows OS using VMWare Workstation and downloaded the Linux ISO file. 
+* Tested the machine to check its capability for VMX virtualization and feature recognition. 
+* Researched and discussed MSRs to be read in the SDM and contributed to the writing and execution of the code.
+* Contribution also includes MSR code for controls- Entry and Exit controls and determining the availability of secondary procbased controls.
+* Staged and committed the cmpe283-1.c code file and Makefile after inserting the module and printing out the buffer from the Kernel. 
+* Verified the proper working of the functionality of code by comparing it with the sample output given to us.
+* Updating the answers for the questions in the README.md file.
+
+
 # Steps to complete Assignment 1:
 1. Setup VM with Linux kernel build as in steps above
 2. CD into the assignment files directory by using command <br> ```cd assignemnt/```
