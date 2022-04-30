@@ -93,6 +93,9 @@ sudo apt-get install cpuid
 ```
   bash script.sh
 ``` 
-![2](https://user-images.githubusercontent.com/20012695/166089846-77133e2a-ee2f-44c1-9575-a7ba458d1742.jpeg)
-![1](https://user-images.githubusercontent.com/20012695/166089843-36c6761f-a0c6-4913-ac1a-410fd9d3c4fc.jpeg)
+
+![2](https://user-images.githubusercontent.com/20012695/166089866-0ed9de14-24b6-4298-a567-768aa6e54a42.jpeg)
+
+![3](https://user-images.githubusercontent.com/20012695/166089870-31f537b1-dcf0-4ce6-9859-a487b8b351c0.jpeg)
+
 
