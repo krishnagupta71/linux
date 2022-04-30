@@ -19,11 +19,10 @@ Discover VMX features present in your processor by writing a Linux kernel module
 
 ### Shereen Punnassery (SJSU ID: 015312128)
 
-* Setup the environment in Windows OS using VMWare Workstation and downloaded the Linux ISO file. 
+* Collaborate with team member to setup the environment in Windows OS using VMWare Workstation. 
 * Tested the machine to check its capability for VMX virtualization and feature recognition. 
 * Researched and discussed MSRs to be read in the SDM and contributed to the writing and execution of the code.
-* Contribution also includes MSR code for controls- Entry and Exit controls and determining the availability of secondary procbased controls.
-* Staged and committed the cmpe283-1.c code file and Makefile after inserting the module and printing out the buffer from the Kernel. 
+* Contribution also includes MSR code for controls- Entry and Exit controls and determining the availability of secondary procbased controls. 
 * Verified the proper working of the functionality of code by comparing it with the sample output given to us.
 * Updating the answers for the questions in the README.md file.
 
