@@ -22,7 +22,7 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 * Researched and discussed the exits and interrupts by referring to the Intel SDM.
 * Contribution also includes writing code for returning the total number of exits and the total time spent processing all exits. 
 * Modified the function kvm_emulate_cpuid in the following file: linux/arch/x86/kvm -> cpuid.c and vmx_handle_exit in the following file: linux/arch/x86/kvm/vmx -> vmx.c 
-* Simulating the answers for the questions in the README.md file.
+
 
 ### Shereen Punnassery
 
@@ -31,6 +31,7 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 * Tested the machine to check its capability for VMX virtualization. 
 * Researched and discussed MSRs to be read in the SDM and contributed to the testing of the code.
 * Contribution also includes writing code for the test program that exercises the functionality in the hypervisor's modification.
+* Updating the answers for the questions in the README.md file
 
 ## Q2. Describe in detail the steps you used to complete the assignment. 
 
