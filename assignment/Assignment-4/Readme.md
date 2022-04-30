@@ -13,11 +13,12 @@ NOTE – there is no coding required for this assignment. We are just running as
 - Collaborated with my teammate over the zoom call.
 - Ran the program with ept = 0, observed the results and captured screenshot.
 - With ept != 0, executed the code, made observations and captured screenshot.
+- Discussed with teammate to conclude the observations made.
 
 ### Shereen Punnassery (SJSU ID: 015312128)
 - Collaborated with my teammate over the zoom call.
 - Verified results in both nested paging and shadow paging.
-- Discussed with my teammate to conclude the observations made.
+- Discussed with teammate to conclude the observations made.
 - Updated the answers for the questions in the README.md file.
 
 ## Steps for completing the assignment:
