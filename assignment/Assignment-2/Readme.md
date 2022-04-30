@@ -34,7 +34,7 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
 
 ## Q2. Describe in detail the steps you used to complete the assignment. 
 
-**Prerequisite:** Follow the steps to configure VM and build linux kernel and boot it.
+**Prerequisite:** Follow the [steps here](https://github.com/krishnagupta71/linux#setting-up-vm-with-the-linux-kernel-and-booting-it) to configure VM and build linux kernel and boot it.
 
 <br />
 
