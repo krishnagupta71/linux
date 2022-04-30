@@ -1,5 +1,5 @@
 # Assignment 4: Nested Paging vs. Shadow Paging
-This assignment builds upon assignment-3. The purpose of this assignment is to illustrate the difference in performance when using nested paging versus shadow paging and to illustrate the different exit frequencies and types. 
+This assignment builds upon assignment-3. The purpose of this assignment is to illustrate the difference in performance when using nested paging versus shadow paging and to find the different exit frequencies and types. 
 
 NOTE – there is no coding required for this assignment. We are just running assignment-3 again in a different configuration. 
 
