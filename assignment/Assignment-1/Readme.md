@@ -14,7 +14,7 @@ Discover VMX features present in your processor by writing a Linux kernel module
 * Tested and verified the proper working of the functionality of code by comparing it with the sample output given to us. 
 * 
 
-### SHereen Punnassery (SJSU ID: 015312128)
+### Shereen Punnassery (SJSU ID: 015312128)
 
 * Setup the environment in Windows OS using VMWare Workstation and downloaded the Linux ISO file. 
 * Tested the machine to check its capability for VMX virtualization and feature recognition. 
@@ -24,6 +24,7 @@ Discover VMX features present in your processor by writing a Linux kernel module
 * Verified the proper working of the functionality of code by comparing it with the sample output given to us.
 * Updating the answers for the questions in the README.md file.
 
+## Q2. Describe in detail the steps you used to complete the assignment. 
 
 # Steps to complete Assignment 1:
 1. Setup VM with Linux kernel build as in steps above
