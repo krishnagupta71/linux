@@ -16,7 +16,6 @@ Discover VMX features present in your processor by writing a Linux kernel module
 * Modified the cmpe283-1.c code by adding the custom logic to enable our system to read and give output for capabilities of the various MSRs. 
 * Contribution also includes MSR code for controls- Primary and Secondary Procbased controls and discovering the VMX Features present in my processor (Intel) by writing a Linux kernel module that queries these features.
 * Tested and verified the proper working of the functionality of code by comparing it with the sample output given to us. 
-* 
 
 ### Shereen Punnassery (SJSU ID: 015312128)
 
