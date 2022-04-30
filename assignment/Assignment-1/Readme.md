@@ -28,7 +28,7 @@ Discover VMX features present in your processor by writing a Linux kernel module
 
 # Steps to complete Assignment 1:
 1. Setup VM with Linux kernel build as in steps above
-2. CD into the assignment files directory by using command <br> ```cd assignemnt/```
+2. CD into the assignment files directory by using command <br> ```cd assignment/```
 3. Compile the C file by using command <br> ```make```. This will create a *.ko file which can be confirmed by ```ls``` command.
 4. Install the module into the kernel using the command ```sudo insmod cmpe283-1.ko```
 5. See the output of the VMX features by printing the system log using ```dmesg```. Or save output in text file using ```dmesg > output.text```
