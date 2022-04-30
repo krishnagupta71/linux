@@ -1,13 +1,13 @@
 # Assignment 3: Instrumentation via hypercall
 The assignment is to modify the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
 
-* For CPUID leaf node %eax=0x4FFFFFFD:
-  ◦ Return the number of exits for the exit number provided (on input) in %ecx
-      This value should be returned in %eax
-* For CPUID leaf node %eax=0x4FFFFFFC:
- ◦ Return the time spent processing the exit number provided (on input) in %ecx
- ◦ Return the high 32 bits of the total time spent for that exit in %ebx
- ◦  the low 32 bits of the total time spent for that exit in %ecx
+
+* For CPUID leaf node %eax=0x4FFFFFFD:<br />
+  ◦ Return the number of exits for the exit number provided (on input) in %ecx. This value should be returned in %eax
+  
+* For CPUID leaf node %eax=0x4FFFFFFC:<br />
+ ◦ Return the time spent processing the exit number provided (on input) in %ecx<br />
+ ◦ Return the high 32 bits of the total time spent for that exit in %ebx and the low 32 bits of the total time spent for that exit in %ecx
 
 ## Team Members: 
 1. Krishna Gupta - 015721199
