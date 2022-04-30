@@ -6000,7 +6000,12 @@ void dump_vmcs(struct kvm_vcpu *vcpu)
 		pr_err("Virtual processor ID = 0x%04x\n",
 		       vmcs_read16(VIRTUAL_PROCESSOR_ID));
 }
-u32 total_exits;
+//Assignment 2 - For total exits
+extern atomic_t total_exits;
+
+//Assignment 3 - Exit counter for input and time spent
+extern atomic_t exit_counter[69];
+extern atomic64_t time_spent_in_exit[69];
 /*
  * The guest has exited.  See if we can fix it or if we need userspace
  * assistance.
@@ -6011,8 +6016,17 @@ static int __vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 	union vmx_exit_reason exit_reason = vmx->exit_reason;
 	u32 vectoring_info = vmx->idt_vectoring_info;
 	u16 exit_handler_index;
-	total_exits++;
+    
+    //Assignment 2 - Increase the no of exits global variable. Using Atomic increment
+	arch_atomic_inc(&total_exits);
 
+    //Assignment 3 
+    u64 start_time;
+    u64 time_in_cycle;
+    int exit_handler;
+    if (exit_reason.basic <= 69) {
+		exit_counter[exit_reason.basic]++;		
+	}
 	/*
 	 * Flush logged GPAs PML buffer, this will make dirty_bitmap more
 	 * updated. Another good is, in kvm_vm_ioctl_get_dirty_log, before
@@ -6169,7 +6183,17 @@ static int __vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 	if (!kvm_vmx_exit_handlers[exit_handler_index])
 		goto unexpected_vmexit;
 
-	return kvm_vmx_exit_handlers[exit_handler_index](vcpu);
+    //Assignment - 3: check the time taken by the exit handler
+    start_time = rdtsc();
+    
+    exit_handler=kvm_vmx_exit_handlers[exit_handler_index](vcpu);
+    
+    time_in_cycle=rdtsc() - start_time;
+    
+	atomic64_add(time_in_cycle, &exits_time);
+    
+    return exit_handler;
+	//return kvm_vmx_exit_handlers[exit_handler_index](vcpu);
 
 unexpected_vmexit:
 	vcpu_unimpl(vcpu, "vmx: unexpected exit reason 0x%x\n",
@@ -6183,10 +6207,10 @@ unexpected_vmexit:
 	vcpu->run->internal.data[1] = vcpu->arch.last_vmentry_cpu;
 	return 0;
 }
-u64_t total_time_in_exits;
+extern atomic64_t total_time_in_exits;
 static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 {
-	u64_t exit_handling_start_time = rdtsc();
+	uint64_t exit_handling_start_time = rdtsc();
 	int ret = __vmx_handle_exit(vcpu, exit_fastpath);
 
 	/*
@@ -6198,10 +6222,10 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 			vcpu->run->exit_reason = KVM_EXIT_X86_BUS_LOCK;
 
 		vcpu->run->flags |= KVM_RUN_X86_BUS_LOCK;
-		total_time_in_exits += rdtsc() - exit_handling_start_time;
+		arch_atomic64_add(rdtsc() - exit_handling_start_time, &total_time_in_exits);
 		return 0;
 	}
-	total_time_in_exits += rdtsc() - exit_handling_start_time;
+	arch_atomic64_add(rdtsc() - exit_handling_start_time, &total_time_in_exits);
 	return ret;
 }
 
