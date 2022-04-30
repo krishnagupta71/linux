@@ -89,9 +89,10 @@ sudo apt-get install cpuid
 ```
 7. Create test program code in inner VM.
 
-8. Once the Guest VM is up, Run the below commands in the inner VM (which is inside a VM):<br />  
+8. Once the Guest VM is up, Run the script provided in the inner VM (which is inside a VM):<br />  
 ```
-  cpuid -l 0X4ffffffd -s exit_number
-  cpuid -l 0X4ffffffc -s exit_number
+  bash script.sh
 ``` 
+![2](https://user-images.githubusercontent.com/20012695/166089846-77133e2a-ee2f-44c1-9575-a7ba458d1742.jpeg)
+![1](https://user-images.githubusercontent.com/20012695/166089843-36c6761f-a0c6-4913-ac1a-410fd9d3c4fc.jpeg)
 
