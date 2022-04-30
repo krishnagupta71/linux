@@ -54,17 +54,6 @@ Discover VMX features present in your processor by writing a Linux kernel module
 # [Assignment 2: Instrumentation via hypercall](https://github.com/krishnagupta71/linux/tree/master/assignment/Assignment-2)
 The assignment is to modify the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
 
-* For CPUID leaf node %eax=0x4FFFFFFF:<br />
-  ◦ Return the total number of exits (all types) in %eax
-* For CPUID leaf node %eax=0x4FFFFFFE:<br />
-  ◦ Return the high 32 bits of the total time spent processing all exits in %ebx<br />
-  ◦ Return the low 32 bits of the total time spent processing all exits in %ecx<br />
-      %ebx and %ecx return values are measured in processor cycles, across all VCPUs
-
-
- # [Assignment 3: Instrumentation via hypercall](https://github.com/krishnagupta71/linux/tree/master/assignment/Assignment-3)
-The assignment is to modify the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
-
 * For CPUID leaf node %eax=0x4FFFFFFD:
   ◦ Return the number of exits for the exit number provided (on input) in %ecx
       This value should be returned in %eax
@@ -72,6 +61,18 @@ The assignment is to modify the CPUID emulation code in KVM to report back addit
  ◦ Return the time spent processing the exit number provided (on input) in %ecx
  ◦ Return the high 32 bits of the total time spent for that exit in %ebx
  ◦  the low 32 bits of the total time spent for that exit in %ecx
+
+
+ # [Assignment 3: Instrumentation via hypercall](https://github.com/krishnagupta71/linux/tree/master/assignment/Assignment-3)
+The assignment is to modify the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
+
+* For CPUID leaf node %eax=0x4FFFFFFF:<br />
+  ◦ Return the total number of exits (all types) in %eax
+* For CPUID leaf node %eax=0x4FFFFFFE:<br />
+  ◦ Return the high 32 bits of the total time spent processing all exits in %ebx<br />
+  ◦ Return the low 32 bits of the total time spent processing all exits in %ecx<br />
+      %ebx and %ecx return values are measured in processor cycles, across all VCPUs
+
 
 
 # [Assignment 4: Nested Paging vs. Shadow Paging](https://github.com/krishnagupta71/linux/tree/master/assignment/Assignment-4)
