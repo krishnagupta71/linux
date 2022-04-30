@@ -1,6 +1,10 @@
 # Assignment 1 - Discover VMX features 
 Discover VMX features present in your processor by writing a Linux kernel module that queries these features. Create a Linux kernel module that will query various MSRs to determine virtualization features available in your CPU. This module will report (via the system message log) the features it discovers.
 
+## Team Members: 
+* Krishna Gupta - 015721199
+* Shereen Punnassery - 015312128
+
 ## Q1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented/researched.
 
 ### Krishna Gupta (SJSU ID: 015721199)
